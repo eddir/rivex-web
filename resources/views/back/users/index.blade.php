@@ -37,6 +37,8 @@
                                                                aria-hidden="true"></span></th>
                             <th>@lang('Role')<span id="role" class="fa fa-sort pull-right"
                                                               aria-hidden="true"></span></th>
+                            <th>@lang('Score')<span id="score" class="fa fa-sort pull-right"
+                                                              aria-hidden="true"></span></th>
                             <th>@lang('New')</th>
                             <th>@lang('Valid')</th>
                             <th>@lang('Confirmed')</th>
@@ -52,6 +54,7 @@
                             <th>@lang('Name')</th>
                             <th>@lang('Email')</th>
                             <th>@lang('Role')</th>
+                            <th>@lang('Score')</th>
                             <th>@lang('New')</th>
                             <th>@lang('Valid')</th>
                             <th>@lang('Confirmed')</th>

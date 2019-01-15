@@ -13,6 +13,9 @@ return [
         'medias-name' => 'medias',
         'settings-name' => 'settings',
         'categories-name' => 'categories',
+        'bugs-name' => 'bugs',
+        'laws-name' => 'laws',
+        'violations-name' => 'Violations',
     ],
     'titles' => [
         'dashboard' => 'Dashboard',
@@ -30,6 +33,9 @@ return [
         'categoriesGestion' => 'Categories Gestion',
         'categoryCreate' => 'Category Creation',
         'categoryEdit' => 'Category Edition',
+        'bugsGestion' => 'Bug tracker',
+        'lawsGestion' => 'Laws',
+        'violationsGestion' => 'Violations'
     ],
     'menu' => [
         'dashboard' => 'Dashboard',
@@ -41,6 +47,9 @@ return [
         'create' => 'Create',
         'notifications' => 'Notifications',
         'comments' => 'Comments',
+        'bugs' => 'Bug tracker',
+        'laws' => 'Law',
+        'violations' => 'Violations',
         'medias' => 'Medias',
     ],
     'new-messages' => 'New contacts !',

@@ -122,6 +122,19 @@ class DatabaseSeeder extends Seeder
             ],
         ]);
 
+        // Bug types
+        DB::table('bug_types')->insert([
+          ['title' => 'Bug'],
+          ['title' => 'Improvements']
+        ]);
+
+        // Bug importants
+        DB::table('bug_importants')->insert([
+          ['title' => 'Low'],
+          ['title' => 'Medium'],
+          ['title' => 'High']
+        ])
+
         $nbrCategories = 3;
 
         // Contacts

@@ -109,7 +109,7 @@
 						@endadmin
 						@redac
 							<li>
-								<a href="{{ url('admin/posts') }}">@lang('Administration')</a>
+								<a href="{{ url('admin/violations') }}">@lang('Administration')</a>
 							</li>
 						@endredac
 						<li>

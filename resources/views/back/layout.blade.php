@@ -116,6 +116,7 @@ desired effect
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
+                <div class="pull-left">На Вашем счету <b>{{ auth()->user()->score }}</b> бал.</div>
                 <div class="pull-right">
                   <a id="logout" href="#" class="btn btn-default btn-flat">@lang('Sign out')</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
@@ -157,66 +158,13 @@ desired effect
             ],
           ])
 
-          @include('back.partials.treeview', [
-            'icon' => 'envelope',
-            'type' => 'contact',
-            'items' => [
-              [
-                'route' => route('contacts.index'),
-                'command' => 'list',
-                'color' => 'blue',
-              ],
-              [
-                'route' => route('contacts.index', ['new' => 'on']),
-                'command' => 'new',
-                'color' => 'yellow',
-              ],
-            ],
-          ])
-
-          @include('back.partials.treeview', [
-            'icon' => 'comment',
-            'type' => 'comment',
-            'items' => [
-              [
-                'route' => route('comments.index'),
-                'command' => 'list',
-                'color' => 'blue',
-              ],
-              [
-                'route' => route('comments.index', ['new' => 'on']),
-                'command' => 'new',
-                'color' => 'yellow',
-              ],
-            ],
-          ])
-
-        <li><a href="{{ route('categories.index') }}"><i class="fa fa-list"></i> <span>@lang('Categories')</span></a></li>
+        <li><a href="{{ route('scores.index') }}"><i class="fa fa-star"></i> <span>@lang('Scores')</span></a></li>
 
         @endadmin
 
-        @include('back.partials.treeview', [
-          'icon' => 'file-text',
-          'type' => 'post',
-          'items' => [
-            [
-              'route' => route('posts.index'),
-              'command' => 'list',
-              'color' => 'blue',
-            ],
-            [
-              'route' => route('posts.index', ['new' => 'on']),
-              'command' => 'new',
-              'color' => 'yellow',
-            ],
-            [
-              'route' => route('posts.create'),
-              'command' => 'create',
-              'color' => 'green',
-            ],
-          ],
-        ])
-
+        <li><a href="{{ route('bugs.index') }}"><i class="fa fa-bug"></i> <span>@lang('Bugs')</span></a></li>
+        <li><a href="{{ route('violations.index') }}"><i class="fa fa-windows"></i> <span>@lang('Violations')</span></a></li>
+        <li><a href="{{ route('laws.index') }}"><i class="fa fa-gavel"></i> <span>@lang('Laws')</span></a></li>
         <li><a href="{{ route('medias.index') }}"><i class="fa fa-image"></i> <span>@lang('Medias')</span></a></li>
 
         @admin

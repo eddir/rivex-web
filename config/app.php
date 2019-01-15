@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Moscow',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -137,7 +137,8 @@ return [
     */
 
     'providers' => [
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        NotificationChannels\Telegram\TelegramServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -264,6 +265,6 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'numberParentComments' => 2,    
+    'numberParentComments' => 2,
 
 ];

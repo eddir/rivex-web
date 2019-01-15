@@ -23,5 +23,24 @@ return [
         'new' => false,
         'valid' => false,
     ],
-
+    'bugs' => [
+         'new' => false,
+         'direction' => 'desc',
+         'order' => 'created_at',
+    ],
+    'violations' => [
+         'new' => false,
+         'direction' => 'desc',
+         'order' => 'created_at',
+    ],
+    'laws' => [
+         'new' => false,
+         'direction' => 'desc',
+         'order' => 'created_at',
+    ],
+    'scores' => [
+         'new' => false,
+         'direction' => 'desc',
+         'order' => 'created_at',
+    ],
 ];

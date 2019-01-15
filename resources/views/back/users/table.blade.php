@@ -12,6 +12,7 @@
                 User
             @endif
         </td>
+        <td>{{ $user->score }}</td>
         <td>
             <input type="checkbox" name="seen" value="{{ $user->id }}" {{ is_null($user->ingoing) ?  'disabled' : 'checked'}}>
         </td>
@@ -26,4 +27,3 @@
         <td><a class="btn btn-danger btn-xs btn-block" href="{{ route('users.destroy', [$user->id]) }}" role="button" title="@lang('Destroy')"><span class="fa fa-remove"></span></a></td>
     </tr>
 @endforeach
-

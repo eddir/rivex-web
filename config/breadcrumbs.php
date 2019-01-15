@@ -55,6 +55,30 @@ return [
         'icon' => 'comment',
         'url' => '#',
     ],
+    'bugs' =>
+    [
+        'name' => 'bugs',
+        'icon' => 'bug',
+        'url' => '#',
+    ],
+    'violations' =>
+    [
+        'name' => 'violations',
+        'icon' => 'windows',
+        'url' => '#',
+    ],
+    'laws' =>
+    [
+        'name' => 'laws',
+        'icon' => 'gavel',
+        'url' => '#',
+    ],
+    'scores' =>
+    [
+        'name' => 'scores',
+        'icon' => 'star',
+        'url' => '#',
+    ],
     'medias' =>
     [
         'name' => 'medias',

@@ -20,6 +20,7 @@
 // Home
 Route::name('home')->get('/', 'Front\PostController@index');
 
+
 // Contact
 Route::resource('contacts', 'Front\ContactController', ['only' => ['create', 'store']]);
 
@@ -40,6 +41,7 @@ Route::resource('comments', 'Front\CommentController', [
 
 Route::name('category')->get('category/{category}', 'Front\PostController@category');
 
+
 // Authentification
 Auth::routes();
 
@@ -56,6 +58,7 @@ Route::prefix('admin')->namespace('Back')->group(function () {
 
         Route::name('admin')->get('/', 'AdminController@index');
 
+
         // Posts
         Route::name('posts.seen')->put('posts/seen/{post}', 'PostController@updateSeen')->middleware('can:manage,post');
         Route::name('posts.active')->put('posts/active/{post}/{status?}', 'PostController@updateActive')->middleware('can:manage,post');
@@ -65,9 +68,24 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         Route::name('notifications.index')->get('notifications/{user}', 'NotificationController@index');
         Route::name('notifications.update')->put('notifications/{notification}', 'NotificationController@update');
 
+        // Bugs and improvements
+        Route::name('bugs.seen')->put('bugs/seen/{bug}', 'BugController@updateSeen');
+        Route::name('bugs.active')->put('bugs/active/{bug}/{status?}', 'BugController@updateActive');
+        Route::resource('bugs', 'BugController');
+
+        // Violations
+        Route::name('violations.seen')->put('violations/seen/{violation}', 'ViolationController@updateSeen');
+        Route::name('violations.active')->put('Violations/active/{violation}/{status?}', 'ViolationController@updateActive');
+        Route::resource('violations', 'ViolationController');
+
+        // Laws
+        Route::resource('laws', 'LawController');
+
+        // Scores
+        Route::resource('scores', 'ScoreController');
+
         // Medias
         Route::view('medias', 'back.medias')->name('medias.index');
-
     });
 
     Route::middleware('admin')->group(function () {

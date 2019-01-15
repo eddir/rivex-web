@@ -30,6 +30,15 @@ return [
     'comments' => [
         'index' => 'commentsGestion',
     ],
+    'bugs' => [
+      'index' => 'bugsGestion',
+    ],
+    'laws' => [
+      'index' => 'lawsGestion',
+    ],
+    'violations' => [
+      'index' => 'violationsGestion',
+    ],
     'medias' => [
         'index' => 'mediasGestion',
     ],
