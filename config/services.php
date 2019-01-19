@@ -38,5 +38,10 @@ return [
     'telegram-bot-api' => [
       'token' => env('TELEGRAM_BOT_TOKEN')
     ],
-
+    
+    'google' => [ 
+        'client_id' => env('G+_CLIENT_ID'),
+        'client_secret' => env('G+_CLIENT_SECRET'),
+        'redirect' => env('G+_URL'),
+    ],
 ];
