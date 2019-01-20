@@ -42,9 +42,9 @@
                             </a><br>
                             <a href="{{ route('register') }}">
                                 @lang('Not registered?')
-                            </a>
+                            </a><br>
                             <a href="/login/google">
-                                @lang('Sign in via Google
+                                @lang('Sign in via Google')
                             </a>
                         </label>
                     </form>
