@@ -1,25 +1,24 @@
-## Laravel 5-5 example ##
+## Вебприложения Rivex ##
 
-**Laravel 5-5 example** is a tutorial application.
+**Вебприложения Rivex** содержат все сайты проекта Rivex.
 
-### Installation ###
+### Установка ###
 
-* type `git clone https://github.com/bestmomo/laravel5-5-example.git projectname` to clone the repository 
-* type `cd projectname`
-* type `composer install`
-* type `composer update`
-* copy *.env.example* to *.env*
-* type `php artisan key:generate`to generate secure key in *.env* file
-* if you use MySQL in *.env* file :
-   * set DB_CONNECTION
-   * set DB_DATABASE
-   * set DB_USERNAME
-   * set DB_PASSWORD
-* if you use sqlite :
-   * type `touch database/database.sqlite` to create the file
-* type `php artisan vendor:publish --provider="Bestmomo\LaravelEmailConfirmation\ServiceProvider" --tag="confirmation:migrations"` to publish email confirmation migration
-* type `php artisan migrate --seed` to create and populate tables
-* edit *.env* for emails configuration
+Минимальная локалбная установка под OS Ubuntu 16.04 и PHP 7.2
+
+* `git clone git@github.com:eddir/rivex-web.git rivex-web`
+* `cd projectname`
+* `composer install`
+* `composer update`
+* `cp .env.example .env`
+* `php artisan key:generate`
+* Откройте .env и укажите следующие значения:
+   * APP_URL: `http://localhost:8000` или другой, если ипользуется apache/nginx
+   * DB_DATABASE
+   * DB_USERNAME
+   * DB_PASSWORD
+* `php artisan serve --host=localhost --port=8000` или свой домен вместо localhost. При наличии apache/nginx эту команду вводить не нужно. Используется для запуска тестового веб-сервера.
+* `php artisan migrate --seed` вводиться в отдельном окне терминала.
 
 ### Include ###
 
@@ -34,23 +33,6 @@
 * [Artisan language](https://github.com/bestmomo/laravel-artisan-language) the package for language strings management
 * [Laravel debugbar](https://github.com/barryvdh/laravel-debugbar)
 * [Etrepat baum](https://github.com/etrepat/baum) for comments management
-
-### Features ###
-
-* Home page
-* Custom error pages 403, 404 and 503
-* Authentication (registration, login, logout, password reset, mail confirmation, throttle)
-* Users roles : administrator (all access), redactor (create and edit post, upload and use medias in personnal directory), and user (create comment in blog)
-* Blog with nested comments
-* Search in posts
-* Tags on posts
-* Contact us page
-* Admin dashboard with users, posts, articles, medias, settings, notifications and comments
-* Multi users medias gestion
-* Localization (English, French and Chinese)
-* Application tests
-* Thumbs creation for images
-* Notifications to send emails and notify redactors for new comments
 
 ### Tricks ###
 
@@ -67,10 +49,6 @@ When you want to launch the tests refresh and populate the database :
 
 `php artisan migrate:fresh --seed`
 
-You must have default settings and **en** language. You must also add provider in **config/app.php**.
+Then:
 
-You can then use Dusk.
-
-### License ###
-
-This example for Laravel is open-sourced software licensed under the MIT license
+`./vendor/phpunit/phpunit/phpunit && php artisan dusk'
