@@ -133,7 +133,7 @@ class DatabaseSeeder extends Seeder
           ['title' => 'Low'],
           ['title' => 'Medium'],
           ['title' => 'High']
-        ])
+        ]);
 
         $nbrCategories = 3;
 

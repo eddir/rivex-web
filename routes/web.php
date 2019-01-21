@@ -63,6 +63,8 @@ Route::name('category')->get('category/{category}', 'Front\PostController@catego
 // Authentification
 Auth::routes();
 
+Route::get('login/{provider}', 'Auth\SocialAccountController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\SocialAccountController@handleProviderCallback');
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +92,7 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         Route::name('bugs.seen')->put('bugs/seen/{bug}', 'BugController@updateSeen');
         Route::name('bugs.active')->put('bugs/active/{bug}/{status?}', 'BugController@updateActive');
         Route::resource('bugs', 'BugController');
+        Route::name('bugcomments.store')->post('bugcomments/{bug}', 'BugCommentController@store');
 
         // Violations
         Route::name('violations.seen')->put('violations/seen/{violation}', 'ViolationController@updateSeen');

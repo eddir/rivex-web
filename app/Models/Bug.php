@@ -81,4 +81,14 @@ class Bug extends Model
       return $this->belongsTo(BugType::class, 'bug_type');
   }
 
+  /**
+   * One to Many relation
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+   */
+  public function comments()
+  {
+      return $this->hasMany(BugComment::class);
+  }
+
 }
