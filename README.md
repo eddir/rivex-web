@@ -4,7 +4,7 @@
 
 ### Установка ###
 
-Минимальная локалбная установка под OS Ubuntu 16.04 и PHP 7.2
+Минимальная локальная установка под OS Ubuntu 16.04 и PHP 7.2
 
 * `git clone git@github.com:eddir/rivex-web.git rivex-web`
 * `cd projectname`
@@ -51,4 +51,4 @@ When you want to launch the tests refresh and populate the database :
 
 Then:
 
-`./vendor/phpunit/phpunit/phpunit && php artisan dusk'
+`./vendor/phpunit/phpunit/phpunit && php artisan dusk`
