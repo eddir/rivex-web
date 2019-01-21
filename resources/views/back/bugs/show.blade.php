@@ -44,6 +44,41 @@
         </div>
         <!-- /.box -->
     </div>
+    <div class="col-md-12">
+        <div class="box box-success">
+          <div class="box-header ui-sortable-handle" style="cursor: move;">
+            <i class="fa fa-comments-o"></i>
+            <h3 class="box-title">@lang('comments')</h3>
+          </div>
+          <div class="box-body">
+          @foreach($bug->comments as $comment)
+            <!-- chat item -->
+            <div class="item">
+              <p class="message">
+                <a href="#" class="name">
+                  <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{ $comment->created_at }}</small>
+                  {{ $comment->user->name }}
+                </a>
+                {{ $comment->body }}
+              </p>
+            </div>
+            <!-- /.item -->
+          @endforeach
+          </div>
+          <!-- /.chat -->
+          <div class="box-footer">
+            <form method="post" action="{{ route('bugcomments.store', [$bug->id]) }}">
+              {{ csrf_field() }}
+              <div class="input-group">
+                <input name="body" class="form-control" placeholder="@lang('Type message')">
+                <div class="input-group-btn">
+                  <input type="submit" class="btn btn-success"><i class="fa fa-plus"></i>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
     <!-- /.col -->
 </div>
 <!-- /.row -->
