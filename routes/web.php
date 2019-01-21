@@ -74,6 +74,7 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         Route::name('bugs.seen')->put('bugs/seen/{bug}', 'BugController@updateSeen');
         Route::name('bugs.active')->put('bugs/active/{bug}/{status?}', 'BugController@updateActive');
         Route::resource('bugs', 'BugController');
+        Route::name('bugcomments.store')->post('bugcomments/{bug}', 'BugCommentController@store');
 
         // Violations
         Route::name('violations.seen')->put('violations/seen/{violation}', 'ViolationController@updateSeen');
