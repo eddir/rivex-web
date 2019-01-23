@@ -17,7 +17,9 @@
 |--------------------------------------------------------------------------|
 */
 
-Route::domain('rivex.online')->view('/', 'home.index');
+Route::domain('rivex.online')->group(function () {
+    Route::view('/', 'home.index');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +27,9 @@ Route::domain('rivex.online')->view('/', 'home.index');
 |--------------------------------------------------------------------------|
 */
 
-Route::domain('shop.rivex.online')->group(function () {
+Route::domain('shop.'.env('APP_DOMAIN'))->group(function () {
     Route::view('/', 'shop.index');
+    Route::name('shop.order')->post('order', 'Shop\IndexController@pay');
 });
 
 /*

@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
+        "actionm/laravel-unitpay": "^1.0",
         "barryvdh/laravel-elfinder": "~0.4",
         "barryvdh/laravel-ide-helper": "^2.5",
         "baum/baum": "^1.1",

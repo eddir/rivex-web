@@ -10,7 +10,7 @@ class Law extends Model
 
     use IngoingTrait;
 
-    /**
+     /**
       * The attributes that are mass assignable.
       *
       * @var array
