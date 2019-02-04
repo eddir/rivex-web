@@ -36,7 +36,7 @@
                                                 <select class="form-control form-selectboxit" id="gameserver" name="server">
                                                     <option>Выберите сервер</option>
                                                     <optgroup label="Minecraft PE">
-                                                        <option value="19132" selected>rivex.online 19132</option>
+                                                        <option value="19132">rivex.online 19132</option>
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -48,7 +48,7 @@
                                         <p>Укажите нужную привилегию. Сумму к оплате Вы увидите после указания ника. Если Вы ранее покупали привилегию ниже уровня, то будет произведён перерасчёт. </p><a class="btn btn-link" href="https://web.archive.org/web/20170719101530/http://shop.rivex.online:80/products.html">Описание привилегий.</a>
                                         <select class="form-control form-chosen" data-placeholder="Выберите привилегию..." id="product" name="product">
                                             @foreach($products as $product)
-                                            <option value="{{ $product->id }}" @if ($loop->first) selected @endif >{{ $product->title }}</option>
+                                            <option value="{{ $product->id }}">{{ $product->title }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -57,13 +57,13 @@
                                     <div class="row">
                                         <div class="col-xs-12 form-group">
                                             <label class="control-label" for="username">Никнейм</label>
-                                            <input type="text" class="form-control" id="username" name="username" value="steve" placeholder="Ник в игре">
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Ник в игре">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 form-group">
                                             <label class="control-label" for="email">Email</label>
-                                            <input type="text" class="form-control" id="email" name="email" value="mail@rostkov.pro" placeholder="email">
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="email">
                                         </div>
                                     </div>
                                     <div class="row">
