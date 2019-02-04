@@ -6,7 +6,7 @@
 
     @foreach ($products as $product)
         <h2>{{ $product->title }} <i>({{ $product->price }} @lang('rub'))</i></h2>
-        {{ $product->description }}
+        {!! $product->body !!}
     @endforeach
 
 @endsection
