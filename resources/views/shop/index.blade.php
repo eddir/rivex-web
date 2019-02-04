@@ -13,7 +13,7 @@
                 <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a href="{{ route('home') }}" class="btn btn-primary btn-block"><i class="fa fa-fw fa-home"></i>Главная</a>
+                            <a href="http://{{ env('APP_DOMAIN') }}" class="btn btn-primary btn-block"><i class="fa fa-fw fa-home"></i>Главная</a>
                             <a href="https://vk.com/rivex_server" class="btn btn-white btn-block">Группа ВКонтакте</a>
                         </div>
                     </div>
