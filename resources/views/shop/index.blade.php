@@ -13,7 +13,7 @@
                 <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <a href="http://rivex.online/" class="btn btn-primary btn-block"><i class="fa fa-fw fa-home"></i>Главная</a>
+                            <a href="{{ route('home') }}" class="btn btn-primary btn-block"><i class="fa fa-fw fa-home"></i>Главная</a>
                             <a href="https://vk.com/rivex_server" class="btn btn-white btn-block">Группа ВКонтакте</a>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                                                 <select class="form-control form-selectboxit" id="gameserver" name="server">
                                                     <option>Выберите сервер</option>
                                                     <optgroup label="Minecraft PE">
-                                                        <option value="19132" selected>rivex.online 19132</option>
+                                                        <option value="19132">rivex.online 19132</option>
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -45,10 +45,10 @@
                                 </div>
                                 <div id="wizard1-2" class="tab-pane">
                                     <div class="form-group">
-                                        <p>Укажите нужную привилегию. Сумму к оплате Вы увидите после указания ника. Если Вы ранее покупали привилегию ниже уровня, то будет произведён перерасчёт. </p><a class="btn btn-link" href="https://web.archive.org/web/20170719101530/http://shop.rivex.online:80/products.html">Описание привилегий.</a>
+                                        <p>Укажите нужную привилегию. Сумму к оплате Вы увидите после указания ника. Если Вы ранее покупали привилегию ниже уровня, то будет произведён перерасчёт. </p><a class="btn btn-link" href="{{ route('shop.list') }}">Описание привилегий.</a>
                                         <select class="form-control form-chosen" data-placeholder="Выберите привилегию..." id="product" name="product">
                                             @foreach($products as $product)
-                                            <option value="{{ $product->id }}" @if ($loop->first) selected @endif >{{ $product->title }}</option>
+                                            <option value="{{ $product->id }}">{{ $product->title }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -57,13 +57,13 @@
                                     <div class="row">
                                         <div class="col-xs-12 form-group">
                                             <label class="control-label" for="username">Никнейм</label>
-                                            <input type="text" class="form-control" id="username" name="username" value="steve" placeholder="Ник в игре">
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Ник в игре">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 form-group">
                                             <label class="control-label" for="email">Email</label>
-                                            <input type="text" class="form-control" id="email" name="email" value="mail@rostkov.pro" placeholder="email">
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="email">
                                         </div>
                                     </div>
                                     <div class="row">
