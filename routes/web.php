@@ -28,8 +28,11 @@ Route::domain('rivex.online')->group(function () {
 */
 
 Route::domain('shop.'.env('APP_DOMAIN'))->group(function () {
-    Route::view('/', 'shop.index');
+    Route::name('shop.index')->get('/', 'Shop\IndexController@index');
     Route::name('shop.order')->post('order', 'Shop\IndexController@pay');
+    Route::name('shop.sum')->post('sum', 'Shop\IndexController@sum');
+    Route::view('conditions', 'shop.conditions')->name('shop.conditions');
+    Route::view('privacy', 'shop.privacy')->name('shop.privacy');
 });
 
 /*

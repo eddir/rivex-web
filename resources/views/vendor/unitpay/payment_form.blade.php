@@ -1,7 +1,7 @@
 @extends('shop.layout')
 
 @section('main')
-
+<!---
   <form method="post" action="https://unitpay.ru/pay/{{ $payment_fields['PUB_KEY'] }}">
     <input type="hidden" name="sum" value="{{ $payment_fields['PAYMENT_AMOUNT'] }}">
     <input type="hidden" name="account" value="{{ $payment_fields['PAYMENT_NO'] }}">
@@ -12,5 +12,8 @@
     <input type="hidden" name="hideOtherMethods" value="{{ config('unitpay.hideOtherMethods','false') }}">
     <button type="submit" class="btn btn_order">@lang('Type to continue')</button>
   </form>
+--->
 
+    <h1>Раздел недоступен</h1>
+    <p>Проводятся технические работы по подключению кассы</p>
 @endsection

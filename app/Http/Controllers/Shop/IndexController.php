@@ -29,7 +29,15 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('shop.index');
+        $products = Product::all();
+        return view('shop.index', compact('products'));
+    }
+
+    public function sum(OrderRequest $request)
+    {
+        $price = Product::find($request->product)->price;
+        $amount = round($price);
+        return response()->json(['ok' => true, 'attachments' => ['total' => $amount]]);
     }
 
     public function pay(OrderRequest $request)
