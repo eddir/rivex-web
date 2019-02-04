@@ -53,4 +53,10 @@ class IndexController extends Controller
         );
     }
 
+    public function list()
+    {
+        $products = Product::all();
+        return view('shop.list', compact('products'));
+    }
+
 }
