@@ -5,6 +5,7 @@ use App\Models\Post;
 use App\Models\Comment;
 use App\Models\User;
 use App\Models\Contact;
+use App\Models\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -331,6 +332,14 @@ class DatabaseSeeder extends Seeder
             'user_id' => 1,
             //'parent_id' => $nbrComments + 1,
         ])->makeChildOf($comment3);
+
+        for ($i = 1; $i < 5; $i++) {
+            factory(Product::class)->create([
+                'title' => "Product $i",
+                'price' => 1.00 * $i * $i,
+                'execute' => "say product number $i"
+            ]);
+        }
 
     }
 }

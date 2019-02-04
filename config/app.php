@@ -170,6 +170,7 @@ return [
          */
         Creativeorange\Gravatar\GravatarServiceProvider::class,
         Baum\Providers\BaumServiceProvider::class,
+        ActionM\UnitPay\UnitPayServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -227,6 +228,7 @@ return [
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'URL' => Illuminate\Support\Facades\URL::class,
+        'UnitPay' => ActionM\UnitPay\Facades\UnitPay::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
