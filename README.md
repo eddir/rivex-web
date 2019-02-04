@@ -8,8 +8,8 @@
 
 * `git clone git@github.com:eddir/rivex-web.git rivex-web`
 * `cd projectname`
-* `composer install`
-* `composer update`
+* `php composer.phar install`
+* `php composer.phar update`
 * `cp .env.example .env`
 * `php artisan key:generate`
 * Откройте .env и укажите следующие значения:
