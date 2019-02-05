@@ -55,7 +55,7 @@ class IndexController extends Controller
 
     public function list()
     {
-        $products = Product::all();
+        $products = Product::orderBy('price')->get();
         return view('shop.list', compact('products'));
     }
 
