@@ -29,7 +29,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where('active', 1)->get();
         return view('shop.index', compact('products'));
     }
 
@@ -55,7 +55,7 @@ class IndexController extends Controller
 
     public function list()
     {
-        $products = Product::orderBy('price')->get();
+        $products = Product::where('active', 1)->orderBy('price')->get();
         return view('shop.list', compact('products'));
     }
 
