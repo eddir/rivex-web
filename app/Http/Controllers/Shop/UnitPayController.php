@@ -53,7 +53,12 @@ class UnitPayController extends Controller
         // Your code should be here:
         if ($order instanceof Order and $order->id) {
 	        $order->status = 2;
-        	$order->save();
+		$order->save();
+		if (\DB::connection('mysql2')->table('players')->where('userName', $order->username)->exists()) {
+			\DB::connection('mysql2')->table('players')->where('userName', $order->username)->update(array('userGroup' => $order->product->execute));
+		} else {
+			\DB::connection('mysql2')->table('players')->insert(['userName' => strtolower($order->username), 'userGroup' => $order->product->execute, 'permissions' => ""]);
+		}
 		return true;
 	}
 
