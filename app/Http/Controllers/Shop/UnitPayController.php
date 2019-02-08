@@ -32,7 +32,7 @@ class UnitPayController extends Controller
 
             // if the current_order is already paid in your database, return strict "paid";
             // if not, return something else
-            $order['UNITPAY_orderStatus'] = $order->order_status; // from your database
+            $order['UNITPAY_orderStatus'] = $order->status; // from your database
             return $order;
         }
 
@@ -49,14 +49,17 @@ class UnitPayController extends Controller
      */
     public static function paidOrderFilter(Request $request, $order)
     {
+	error_log("ORDER ID: ".$order);
         // Your code should be here:
-        $order = Order::find($order);
-        $order->status = 1;
-        $order->save();
+        if ($order instanceof Order and $order->id) {
+	        $order->status = 2;
+        	$order->save();
+		return true;
+	}
 
         // Return TRUE if the order is saved as "paid" in the database or FALSE if some error occurs.
         // If you return FALSE, then you can repeat the failed paid requests on the unitpay website manually.
-        return true;
+        return false;
     }
 
     /**
