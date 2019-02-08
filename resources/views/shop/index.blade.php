@@ -5,7 +5,7 @@
 <div class="page-wrapper">
     <div class="page-content">
         <div class="page-heading page-heading-md">
-            <h2>Rivex - донат</h2>
+            <h2>Донат</h2>
         </div>
 
         <div class="container-fluid-md">
@@ -32,7 +32,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="form-group">
-                                                <p>Укажите адрес сервера, на котором хотите приобрести привилегию. Привилегия будет выдана на неограниченный срок. <code>rivex-serv.ru</code><strong> и </strong><code>rivex.online</code><strong> адреса одного и того же сервера.</strong></p>
+                                                <p>Укажите адрес сервера, на котором хотите приобрести привилегию. Привилегия будет выдана на неограниченный срок.</p>
                                                 <select class="form-control form-selectboxit" id="gameserver" name="gameserver">
                                                     <option>Выберите сервер</option>
                                                     <optgroup label="Minecraft PE">
