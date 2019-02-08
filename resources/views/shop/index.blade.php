@@ -37,7 +37,11 @@
                                                     <option>Выберите сервер</option>
                                                     <optgroup label="Minecraft PE">
                                                     @foreach ($servers as $server)
-                                                        <option value="{{ $server->id }}">{{ $server->title }}</option>
+                                                        <option value="{{ $server->id }}"
+                                                        @if ($loop->first)
+                                                            selected
+                                                        @endif
+                                                        >{{ $server->title }}</option>
                                                     @endforeach
                                                     </optgroup>
                                                 </select>
