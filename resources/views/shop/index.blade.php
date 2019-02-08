@@ -33,10 +33,12 @@
                                         <div class="col-xs-12">
                                             <div class="form-group">
                                                 <p>Укажите адрес сервера, на котором хотите приобрести привилегию. Привилегия будет выдана на неограниченный срок. <code>rivex-serv.ru</code><strong> и </strong><code>rivex.online</code><strong> адреса одного и того же сервера.</strong></p>
-                                                <select class="form-control form-selectboxit" id="gameserver" name="server">
+                                                <select class="form-control form-selectboxit" id="gameserver" name="gameserver">
                                                     <option>Выберите сервер</option>
                                                     <optgroup label="Minecraft PE">
-                                                        <option value="19132">rivex.online 19132</option>
+                                                    @foreach ($servers as $server)
+                                                        <option value="{{ $server->id }}">{{ $server->title }}</option>
+                                                    @endforeach
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -68,8 +70,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-12 form-group">
-                                            <label class="control-label" for="discount">Скидочный купон</label>
-                                            <input type="text" class="form-control" id="discount" name="discount" placeholder="Если есть">
+                                            <label class="control-label" for="coupon">Скидочный купон</label>
+                                            <input type="text" class="form-control" id="coupon" name="coupon" placeholder="Если есть">
                                         </div>
                                     </div>
                                     <p>Нажимая "Готово" Вы соглашаетесь с <a href="{{ route('shop.conditions') }}">Правилами пользования</a> и <a href="{{ route('shop.privacy') }}">Политикой конфиденциальности</a>.</p>
