@@ -34,6 +34,7 @@ Route::domain('shop.'.env('APP_DOMAIN'))->group(function () {
     Route::name('shop.list')->get('list', 'Shop\IndexController@list');
     Route::view('conditions', 'shop.conditions')->name('shop.conditions');
     Route::view('privacy', 'shop.privacy')->name('shop.privacy');
+    Route::name('shop.result')->get('/unitpay/result', 'Shop\UnitPayController@payOrderFromGate');
 });
 
 /*
