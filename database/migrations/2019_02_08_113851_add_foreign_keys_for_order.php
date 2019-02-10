@@ -20,7 +20,7 @@ class AddForeignKeysForOrder extends Migration
           $table->foreign('product_id')->references('id')->on('products')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-          $table->foreign('coupon_id')->references('id')->on('servers')
+          $table->foreign('coupon_id')->references('id')->on('coupons')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
