@@ -54,10 +54,23 @@ class UnitPayController extends Controller
         if ($order instanceof Order and $order->id) {
 	        $order->status = 2;
 		$order->save();
-		if (\DB::connection('mysql2')->table('players')->where('userName', $order->username)->exists()) {
-			\DB::connection('mysql2')->table('players')->where('userName', $order->username)->update(array('userGroup' => $order->product->execute));
-		} else {
-			\DB::connection('mysql2')->table('players')->insert(['userName' => strtolower($order->username), 'userGroup' => $order->product->execute, 'permissions' => ""]);
+
+		$commands = json_decode($order->product->execute);
+		foreach ($commands as $cmd) {
+			if ($cmd->type == "group") {
+				if (\DB::connection('mysql2')->table('players')->where('userName', $order->username)->exists()) {
+					\DB::connection('mysql2')->table('players')->where('userName', $order->username)->update(array('userGroup' => $cmd->execute));
+				} else {
+					\DB::connection('mysql2')->table('players')->insert(['userName' => strtolower($order->username), 'userGroup' => $cmd->execute, 'permissions' => ""]);
+				}
+			}
+			elseif ($cmd->type == "money") {
+				if(\DB::connection('mysql3')->table('user_money')->where('username', $order->username)->exists()) {
+					\DB::connection('mysql3')->table('user_money')->increment('money', $cmd->execute);
+				} else {
+					\DB::connection('mysql3')->table('user_money')->insert(['username' => strtolower($order->username), 'money' => $cmd->execute]);
+				}
+			}
 		}
 		return true;
 	}
