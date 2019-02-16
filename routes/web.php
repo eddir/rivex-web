@@ -11,7 +11,7 @@
 |
 */
 
-$domain = implode('.', array_slice(explode('.', request()->server('HTTP_HOST')), -2));
+$domain = implode('.', array_slice(explode('.', explode(':', request()->server('HTTP_HOST'))[0]), -2));
 
 /*
 |--------------------------------------------------------------------------
