@@ -28,6 +28,11 @@ return [
          'direction' => 'desc',
          'order' => 'created_at',
     ],
+    'bug_comments' => [
+         'new' => false,
+         'direction' => 'desc',
+         'order' => 'created_at',
+    ],
     'violations' => [
          'new' => false,
          'direction' => 'desc',

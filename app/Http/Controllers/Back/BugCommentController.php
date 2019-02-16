@@ -13,8 +13,7 @@ use App\ {
 
 class BugCommentController extends Controller
 {
-  use Indexable;
-
+  
   /**
    * Create a new CommentController instance.
    *
@@ -28,7 +27,7 @@ class BugCommentController extends Controller
   }
 
   /**
-   * Store a newly created post in storage.
+   * Store a newly created comment in storage.
    *
    * @param  \App\Http\Requests\BugCommentRequest  $request
    * @return \Illuminate\Http\Response

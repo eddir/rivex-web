@@ -38,6 +38,12 @@ class Bug extends Model
       $score->description = 'Bug:'.$model->id;
       $score->save();
       Notification::send($model, new BugCreate($model->user));
+      BugComment::create([
+          'body' => $model->title,
+          'type' => 1,
+          'user_id' => $model->user->id,
+          'bug_id' => $model->id
+      ]);
     });
   }
 

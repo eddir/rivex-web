@@ -10,6 +10,21 @@ use App\Models\ {
 class BugCommentRepository
 {
     /**
+     * Get comments of bugs paginate.
+     *
+     * @param  int  $nbrPages
+     * @param  array  $parameters
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public function getAll($nbrPages = 3)
+    {
+        return BugComment::with ([
+                'user',
+            ])
+            ->latest()
+            ->paginate($nbrPages);
+    }
+    /**
      * Store post.
      *
      * @param  \App\Http\Requests\BugCommentRequest  $request

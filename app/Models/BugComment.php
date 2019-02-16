@@ -12,7 +12,7 @@ class BugComment extends Model
   * @var array
   */
   protected $fillable = [
-      'body', 'user_id', 'bug_id'
+      'body', 'type', 'user_id', 'bug_id'
   ];
 
   /**
