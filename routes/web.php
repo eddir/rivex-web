@@ -104,6 +104,7 @@ Route::prefix('admin')->namespace('Back')->group(function () {
         Route::resource('bugs', 'BugController');
         Route::name('bugcomments.store')->post('bugcomments/{bug}', 'BugCommentController@store');
 
+
         // Violations
         Route::name('violations.seen')->put('violations/seen/{violation}', 'ViolationController@updateSeen');
         Route::name('violations.active')->put('Violations/active/{violation}/{status?}', 'ViolationController@updateActive');

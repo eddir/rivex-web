@@ -7,12 +7,18 @@ use App\ {
     Http\Requests\SettingsRequest,
     Repositories\ConfigAppRepository,
     Repositories\EnvRepository,
+    Repositories\BugCommentRepository,
     Services\PannelAdmin
 };
 use Illuminate\Support\Facades\Artisan;
 
 class AdminController extends Controller
 {
+
+    public function __construct(BugCommentRepository $repository)
+    {
+        $this->repository = $repository;
+    }
     /**
      * Show the admin dashboard.
      *
@@ -31,7 +37,9 @@ class AdminController extends Controller
             }
         }
 
-        return view('back.index', compact('pannels'));
+        $bug_comments = $this->repository->getAll();
+
+        return view('back.index', compact('pannels', 'bug_comments'));
     }
 
     /**

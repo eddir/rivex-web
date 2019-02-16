@@ -17,6 +17,7 @@ class CreateBugCommentsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->text('body');
+            $table->tinyInteger('type')->default(0);
             $table->integer('user_id')->unsigned();
             $table->integer('bug_id')->unsigned();
 

@@ -61,6 +61,12 @@ return [
         'icon' => 'bug',
         'url' => '#',
     ],
+    'notes' =>
+    [
+        'name' => 'notes',
+        'icon' => 'notes',
+        'url' => '#',
+    ],
     'violations' =>
     [
         'name' => 'violations',

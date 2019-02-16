@@ -136,6 +136,23 @@ class DatabaseSeeder extends Seeder
           ['title' => 'High']
         ]);
 
+        // Bugs
+        DB::table('bugs')->insert([
+            'title' => 'Bug 1',
+            'body' => 'Main body',
+            'bug_important' => 1,
+            'bug_type' => 1,
+            'progress' => 0,
+            'user_id' => 1,
+        ]);
+
+        // Bug Comments
+        DB::table('bug_comments')->insert([
+            'body' => 'qwerty123456',
+            'user_id' => 1,
+            'bug_id' => 1
+        ]);
+
         $nbrCategories = 3;
 
         // Contacts
