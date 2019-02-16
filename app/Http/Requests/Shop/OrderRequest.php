@@ -17,8 +17,8 @@ class OrderRequest extends Request
             'username' => 'required|max:255',
             'product' => 'required|numeric',
             'email' => 'required|email',
-            'server' => 'required|numeric',
-            'discount' => 'max:64'
+            'gameserver' => 'required|numeric',
+            'coupon' => 'max:64'
         ];
     }
 }

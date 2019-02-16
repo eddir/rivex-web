@@ -34,7 +34,7 @@ class CreateLawsTable extends Migration
      */
     public function down()
     {
-        Schema::table('violations', function(Blueprint $table) {
+        Schema::table('laws', function(Blueprint $table) {
           $table->dropForeign('laws_user_id_foreign');
         });
         Schema::dropIfExists('laws');

@@ -36,14 +36,14 @@ return [
      *  orderCurrency
      *  orderSum
      */
-    'searchOrderFilter' => 'App\Http\Controllers\Shop\UnitpayController::searchOrderFilter',
+    'searchOrderFilter' => 'App\Http\Controllers\Shop\UnitPayController::searchOrderFilter',
 
     /*
      *  PaidOrderFilter
      *  If current orderStatus from DB != paid then call PaidOrderFilter
      *  update order into DB & other actions
      */
-    'paidOrderFilter' => 'App\Http\Controllers\Shop\UnitpayController::paidOrderFilter',
+    'paidOrderFilter' => 'App\Http\Controllers\Shop\UnitPayController::paidOrderFilter',
 
     'payment_forms' => [
         'cards' => true,

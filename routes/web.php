@@ -11,6 +11,8 @@
 |
 */
 
+$domain = implode('.', array_slice(explode('.', explode(':', request()->server('HTTP_HOST'))[0]), -2));
+
 /*
 |--------------------------------------------------------------------------
 | Home
@@ -27,13 +29,14 @@ Route::domain('rivex.online')->group(function () {
 |--------------------------------------------------------------------------|
 */
 
-Route::domain('shop.'.env('APP_DOMAIN'))->group(function () {
+Route::domain("shop.$domain")->group(function () {
     Route::name('shop.index')->get('/', 'Shop\IndexController@index');
     Route::name('shop.order')->post('order', 'Shop\IndexController@pay');
     Route::name('shop.sum')->post('sum', 'Shop\IndexController@sum');
     Route::name('shop.list')->get('list', 'Shop\IndexController@list');
     Route::view('conditions', 'shop.conditions')->name('shop.conditions');
     Route::view('privacy', 'shop.privacy')->name('shop.privacy');
+    Route::name('shop.result')->get('/unitpay/result', 'Shop\UnitPayController@payOrderFromGate');
 });
 
 /*
