@@ -47,7 +47,11 @@ class IndexController extends Controller
         $coupon = null;
         $discount = 0;
         if ($coupon_name) {
-            $coupon = Coupon::where('name', $coupon_name)->where('active', 1)->first();
+            $coupon = Coupon::where('name', $coupon_name)->where('active', 1)->where(function ($query) {
+               $query->where('valid_since', '<', date('Y-m-d H:i:s'))->orWhereNull('valid_since');  
+           })->where(function ($query) {
+               $query->where('valid_until', '>', date('Y-m-d H:i:s'))->orWhereNull('valid_until');
+            })->first();
             if ($coupon !== null) {
                 $discount = $coupon->amount / 100;
             }
