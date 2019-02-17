@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->integer('server_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('coupon_id')->unsigned()->nullable();
+            $table->integer('method_id')->unsigned()->nullable();
         });
     }
 
