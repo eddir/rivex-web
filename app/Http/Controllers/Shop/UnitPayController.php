@@ -6,7 +6,8 @@ use App\ {
     Http\Controllers\Controller,
     Http\Requests\Shop\OrderRequest,
     Models\Product,
-    Models\Order
+    Models\Order,
+    Models\PaymentType
 };
 
 use Illuminate\Http\Request;
@@ -49,10 +50,12 @@ class UnitPayController extends Controller
      */
     public static function paidOrderFilter(Request $request, $order)
     {
-	error_log("ORDER ID: ".$order);
         // Your code should be here:
         if ($order instanceof Order and $order->id) {
+		$paymentType = PaymentType::where('codename', $request->params['paymentType'])->get()->first();
+		
 	        $order->status = 2;
+		$order->method_id = $paymentType->id ?? null;
 		$order->save();
 
 		$commands = json_decode($order->product->execute);
