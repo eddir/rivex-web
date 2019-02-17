@@ -16,7 +16,7 @@ class BugCommentRepository
      * @param  array  $parameters
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function getAll($nbrPages = 3)
+    public function getAll($nbrPages)
     {
         return BugComment::with ([
                 'user',

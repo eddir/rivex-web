@@ -37,7 +37,7 @@ class AdminController extends Controller
             }
         }
 
-        $bug_comments = $this->repository->getAll();
+        $bug_comments = $this->repository->getAll(config("app.nbrPages.back.bug_comments"));
 
         return view('back.index', compact('pannels', 'bug_comments'));
     }

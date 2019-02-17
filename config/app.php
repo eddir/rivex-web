@@ -250,6 +250,7 @@ return [
             'users' => 8,
             'comments' => 3,
             'contacts' => 3,
+            'bug_comments' => 25,
         ],
     ],
 

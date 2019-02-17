@@ -21,7 +21,7 @@
                         @endif
 
                         <div class="timeline-body">
-                            {{ str_limit($comment->body, 50) }}
+                            {{ str_limit($comment->body, 100) }}
                         </div>
 
                         <div class="timeline-footer">
