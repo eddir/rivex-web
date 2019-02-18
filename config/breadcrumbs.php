@@ -103,5 +103,11 @@ return [
         'icon' => 'list',
         'url' => '/admin/categories',
     ],
+    'stat' =>
+    [
+        'name' => 'stat',
+        'icon' => 'list',
+        'url' => '/admin/stat',
+    ],
 
 ];

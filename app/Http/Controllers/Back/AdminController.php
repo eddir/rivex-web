@@ -8,6 +8,7 @@ use App\ {
     Repositories\ConfigAppRepository,
     Repositories\EnvRepository,
     Repositories\BugCommentRepository,
+    Repositories\OrderRepository,
     Services\PannelAdmin
 };
 use Illuminate\Support\Facades\Artisan;
@@ -40,6 +41,12 @@ class AdminController extends Controller
         $bug_comments = $this->repository->getAll(config("app.nbrPages.back.bug_comments"));
 
         return view('back.index', compact('pannels', 'bug_comments'));
+    }
+
+    public function stat(OrderRepository $orderRepository)
+    {
+        $orders = $orderRepository->getLatest();
+        return view('back.statistics', compact('orders'));
     }
 
     /**

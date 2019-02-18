@@ -75,6 +75,8 @@ class UnitPayController extends Controller
 				}
 			}
 		}
+		$order->status = 3;
+		$order->save();
 		return true;
 	}
 

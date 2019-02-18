@@ -5,7 +5,8 @@ namespace App\Models;
 use App\Models\{
     Product,
     Server,
-    Coupon
+    Coupon,
+    PaymentType
 };
 
 use Illuminate\Database\Eloquent\Model;
@@ -50,4 +51,15 @@ class Order extends Model
      {
          return $this->belongsTo(Coupon::class);
      }
+
+     /**
+      * One to Many relation
+      *
+      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+      */
+     public function method()
+     {
+         return $this->belongsTo(PaymentType::class);
+     }
+
 }

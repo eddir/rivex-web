@@ -17,4 +17,9 @@ class OrderRepository
         return Order::create($request->all());
     }
 
+    public function getLatest($count = 20)
+    {
+        return Order::latest()->limit($count)->get();
+    }
+
 }

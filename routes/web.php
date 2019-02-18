@@ -144,6 +144,8 @@ Route::prefix('admin')->namespace('Back')->group(function () {
             'index', 'destroy'
         ]]);
 
+        Route::name('stat')->get('stat', 'AdminController@stat');
+
         // Settings
         Route::name('settings.edit')->get('settings', 'AdminController@settingsEdit');
         Route::name('settings.update')->put('settings', 'AdminController@settingsUpdate');
