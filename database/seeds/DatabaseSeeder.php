@@ -6,6 +6,9 @@ use App\Models\Comment;
 use App\Models\User;
 use App\Models\Contact;
 use App\Models\Product;
+use App\Models\Server;
+use App\Models\Coupon;
+use App\Models\PaymentType;
 
 class DatabaseSeeder extends Seeder
 {
@@ -355,6 +358,38 @@ class DatabaseSeeder extends Seeder
                 'title' => "Product $i",
                 'price' => 1.00 * $i * $i,
                 'execute' => "say product number $i"
+            ]);
+        }
+
+        DB::table('coupons')->insert([
+            'name' => 'TEST',
+            'amount' => 50
+        ]);
+
+        DB::table('payment_types')->insert([
+            'name' => 'Yandex.Money',
+            'codename' => 'yandex',
+            'commission' => 8
+        ]);
+
+        DB::table('servers')->insert([
+            'production' => 1,
+            'title' => 'First server',
+            'port' => 19132
+        ]);
+
+        for ($i = 1; $i < 6; $i++) {
+            DB::table('orders')->insert([
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime(),
+                'status' => $i % 3 + 1,
+                'amount' => 200,
+                'username' => "Steve $i",
+                'email' => 'steve@example.com',
+                'server_id' => 1,
+                'product_id' => 1,
+                'coupon_id' => 1,
+                'method_id' => 1,
             ]);
         }
 
