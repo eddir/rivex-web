@@ -378,11 +378,13 @@ class DatabaseSeeder extends Seeder
             'port' => 19132
         ]);
 
-        for ($i = 1; $i < 6; $i++) {
+        for ($i = 1; $i < 15; $i++) {
+            $r = mt_rand(1, 3);
+            $d = intdiv($i, $r + 1);
             DB::table('orders')->insert([
-                'created_at' => new DateTime(),
-                'updated_at' => new DateTime(),
-                'status' => $i % 3 + 1,
+                'created_at' => new DateTime("$d days ago"),
+                'updated_at' => new DateTime("$d days ago"),
+                'status' => $r,
                 'amount' => 200,
                 'username' => "Steve $i",
                 'email' => 'steve@example.com',

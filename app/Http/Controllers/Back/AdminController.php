@@ -49,6 +49,28 @@ class AdminController extends Controller
         return view('back.statistics', compact('orders'));
     }
 
+    public function statAjax(OrderRepository $orderRepository)
+    {
+        $days = 14;
+        $orders = $orderRepository->getLatestDays($days)->toArray();
+        $stat = [];
+
+        for ($i = $days; $i >= 0; $i--) {
+            $date = (new \DateTime("$i days ago"))->format('d.m');
+            $stat['orders'][$date] = [
+                'date' => $date,
+                'sum' => 0
+            ];
+        }
+
+        foreach ($orders as $day) {
+            $stat['orders'][$day['date']] = $day;
+        }
+
+        $stat['orders'] = array_values($stat['orders']);
+        return response()->json($stat);
+    }
+
     /**
      * Show the settings page
      *

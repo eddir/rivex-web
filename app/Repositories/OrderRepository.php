@@ -22,4 +22,15 @@ class OrderRepository
         return Order::latest()->limit($count)->get();
     }
 
+    public function getLatestDays($days = 7)
+    {
+        return Order::where('status', 3)
+            ->where('updated_at', '>', new \DateTime("$days days ago"))
+            ->groupBy('updated_at')
+            ->select(array(
+                \DB::raw('sum(amount) AS sum'),
+                \DB::raw("DATE_FORMAT(created_at, '%d.%m') as date")
+            ))->groupBy('date')->get();
+    }
+
 }
