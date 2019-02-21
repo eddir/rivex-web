@@ -20,22 +20,22 @@
                     <b>ID</b> <a class="pull-right">{{ $bug->id }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>@lang('title')</b> <a class="pull-right">{{ $bug->title }}</a>
+                    <b>@lang('Title')</b> <a class="pull-right">{{ $bug->title }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>@lang('author')</b> <a class="pull-right">{{ $bug->user->name }}</a>
+                    <b>@lang('Author')</b> <a class="pull-right">{{ $bug->user->name }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>@lang('important')</b> <a class="pull-right">{{ $bug->important->title }}</a>
+                    <b>@lang('Important')</b> <a class="pull-right">{{ $bug->important->title }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>@lang('type')</b> <a class="pull-right">{{ $bug->type->title }}</a>
+                    <b>@lang('Type')</b> <a class="pull-right">{{ $bug->type->title }}</a>
                   </li>
                   <li class="list-group-item">
-                    <b>@lang('progress')</b> <a class="pull-right">{{ $bug->progress }}%</a>
+                    <b>@lang('Progress')</b> <a class="pull-right">{{ $bug->progress }}%</a>
                   </li>
                   <li class="list-group-item">
-                    <b>@lang('date')</b> <a class="pull-right">{{ $bug->created_at }}</a>
+                    <b>@lang('Date')</b> <a class="pull-right">{{ $bug->created_at }}</a>
                   </li>
                 </ul>
                 {!! $bug->body !!}

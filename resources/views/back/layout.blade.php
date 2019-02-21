@@ -16,7 +16,9 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('adminlte/css/AdminLTE.min.css') }}">
   <!-- AdminLTE Skins. -->
-  <link rel="stylesheet" href="{{ asset('adminlte/css/skins/skin-blue.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('adminlte/css/skins/skin-green.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+
 
   @yield('css')
 
@@ -47,14 +49,14 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="{{ route('admin') }}" class="logo">
+    <a href="{{ route('admin') }}" class="logo hidden-xs hidden-sm">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b><span class="fa fa-fw fa-dashboard"></span></b></span>
       <!-- logo for regular state and mobile devices -->

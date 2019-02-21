@@ -21,5 +21,19 @@
         "Tps graph": "График TPS",
         "Tick usage graph": "График времени одного тика",
         "Memory graph": "График оперативной памяти",
-        "Online graph": "График онлайна"
+        "Online graph": "График онлайна",
+        "Dashboard": "Главная",
+        "Scores": "Баллы",
+        "Statistics": "Мотивация",
+        "Bugs": "Баги",
+        "Violations": "Нарушения",
+        "Laws": "Правила",
+        "Medias": "Файлы",
+        "Settings": "Настройки",
+        "Title": "Заголовок",
+        "Author": "Автор",
+        "Important": "Важность",
+        "Type": "Тип",
+        "Progress": "Прогресс",
+        "Date": "Дата"
 }

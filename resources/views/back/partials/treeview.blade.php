@@ -1,5 +1,5 @@
 <li class="treeview">
-    <a href="#"><i class="fa fa-fw fa-{{ $icon }}"></i> <span>@lang('admin.menu.' . $type . 's')</span>
+    <a href="#"><i class="fa fa-{{ $icon }}"></i> <span>@lang('admin.menu.' . $type . 's')</span>
         <span class="pull-right-container">
             <span class="fa fa-angle-left pull-right"></span>
         </span>
