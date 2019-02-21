@@ -51,6 +51,7 @@ return [
         'laws' => 'Законы',
         'violations' => 'Нарушения',
         'medias' => 'Файлы',
+        'statistics' => 'Мотивация'
     ],
     'new-messages' => 'Новые контакты !',
     'new-registers' => 'Новые пользователи !',

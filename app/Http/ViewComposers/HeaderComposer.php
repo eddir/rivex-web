@@ -7,6 +7,8 @@ use Illuminate\ {
     Support\Facades\Route
 };
 
+use App\Models\Server;
+
 class HeaderComposer
 {
     /**
@@ -38,6 +40,16 @@ class HeaderComposer
         // Notifications
         $countNotifications = auth()->user()->unreadNotifications()->count();
 
-        $view->with(compact('breadcrumbs', 'title', 'countNotifications'));
+        // Servers
+        $servers = array();
+        foreach (Server::all() as $server) {
+            $servers[] = [
+                'route' => route('stat', $server->id),
+                'command' => $server->port,
+                'color' => 'blue'
+            ];
+        }
+
+        $view->with(compact('breadcrumbs', 'title', 'countNotifications', 'servers'));
     }
 }
