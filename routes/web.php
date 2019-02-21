@@ -144,8 +144,8 @@ Route::prefix('admin')->namespace('Back')->group(function () {
             'index', 'destroy'
         ]]);
 
-        Route::name('stat')->get('stat', 'AdminController@stat');
-        Route::name('stat.ajax')->get('stat/ajax', 'AdminController@statAjax');
+        Route::name('stat')->get('statistics/{server}', 'AdminController@statistics');
+        Route::name('stat.ajax')->get('statistics/{server}/ajax', 'AdminController@statisticsAjax');
 
         // Settings
         Route::name('settings.edit')->get('settings', 'AdminController@settingsEdit');

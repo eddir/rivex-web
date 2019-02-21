@@ -4,5 +4,22 @@
 	"Type to continue": "Нажмите, чтобы продолжить",
 	"Posted a record": "опубликована запись",
 	"Left a comment": "новый комментарий",
-	"Read more": "Подробнее"
+	"Read more": "Подробнее",
+        "Success": "Успешно",
+        "Not issued": "Не выдано",
+        "Not paid": "Не оплачено",
+        "Username": "Ник",
+        "Status": "Статус",
+        "Product": "Товар",
+        "Amount": "Сумма",
+        "Coupon": "Промокод",
+        "Server": "Сервер",
+        "Method": "Способ",
+        "Date": "Дата",
+        "Latest orders": "Продажи",
+        "Sales graph": "График продаж",
+        "Tps graph": "График TPS",
+        "Tick usage graph": "График времени одного тика",
+        "Memory graph": "График оперативной памяти",
+        "Online graph": "График онлайна"
 }

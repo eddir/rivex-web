@@ -103,7 +103,7 @@ return [
         'icon' => 'list',
         'url' => '/admin/categories',
     ],
-    'stat' =>
+    'statistics' =>
     [
         'name' => 'stat',
         'icon' => 'list',

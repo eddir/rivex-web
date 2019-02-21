@@ -9,7 +9,9 @@ use App\ {
     Repositories\EnvRepository,
     Repositories\BugCommentRepository,
     Repositories\OrderRepository,
-    Services\PannelAdmin
+    Repositories\UptimeRepository,
+    Services\PannelAdmin,
+    Models\Server
 };
 use Illuminate\Support\Facades\Artisan;
 
@@ -43,32 +45,50 @@ class AdminController extends Controller
         return view('back.index', compact('pannels', 'bug_comments'));
     }
 
-    public function stat(OrderRepository $orderRepository)
+    public function statistics(Server $server, OrderRepository $orderRepository)
     {
-        $orders = $orderRepository->getLatest();
+        $orders = $orderRepository->getLatest($server->id);
         return view('back.statistics', compact('orders'));
     }
 
-    public function statAjax(OrderRepository $orderRepository)
+    public function statisticsAjax(Server $server, OrderRepository $orderRepository, UptimeRepository $uptimeRepository)
     {
-        $days = 14;
-        $orders = $orderRepository->getLatestDays($days)->toArray();
         $stat = [];
 
-        for ($i = $days; $i >= 0; $i--) {
-            $date = (new \DateTime("$i days ago"))->format('d.m');
-            $stat['orders'][$date] = [
-                'date' => $date,
-                'sum' => 0
+        $online = $uptimeRepository->getOnline($server->port)->toArray();
+        $stat['online'] = $this->generateArray($online, 0, 14, 'd', '%d days ago', 'online');
+
+        $system_data = $uptimeRepository->getUptimeData($server->port)->toArray();
+        $stat['tps'] = $this->generateArray($system_data, 0, 24, 'H', '%d hours ago', 'tps');
+        $stat['tick_usage'] = $this->generateArray($system_data, 1, 24, 'H', '%d hours ago', 'tick_usage');
+        $stat['memory'] = $this->generateArray($system_data, 1, 24, 'H', '%d hours ago', 'memory'); 
+
+        $orders = $orderRepository->getLatestDays($server->id)->toArray();
+        $stat['orders'] = $this->generateArray($orders, 0, 14, 'd.m', '%d days ago', 'sum');
+
+        return response()->json($stat);
+    }
+
+    public function generateArray($data, $min, $max, $format, $time_format, $index)
+    {
+        $res = [];
+
+        for ($i = $max; $i >= $min; $i--) {
+            $date = (new \DateTime(sprintf($time_format, $i)))->format($format);
+            $res[$date] = [
+                'd' => $date,
+                'v' => 0
             ];
         }
 
-        foreach ($orders as $day) {
-            $stat['orders'][$day['date']] = $day;
+        foreach ($data as $val) {
+            $res[$val['date']] = [
+                 'd' => $val['date'],
+                 'v' => $val[$index]
+            ];
         }
 
-        $stat['orders'] = array_values($stat['orders']);
-        return response()->json($stat);
+        return array_values($res);
     }
 
     /**

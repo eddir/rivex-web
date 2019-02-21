@@ -17,14 +17,14 @@ class OrderRepository
         return Order::create($request->all());
     }
 
-    public function getLatest($count = 20)
+    public function getLatest($server, $count = 20)
     {
-        return Order::latest()->limit($count)->get();
+        return Order::where('server_id', $server)->latest()->limit($count)->get();
     }
 
-    public function getLatestDays($days = 7)
+    public function getLatestDays($server, $days = 14)
     {
-        return Order::where('status', 3)
+        return Order::where('server_id', $server)->where('status', 3)
             ->where('updated_at', '>', new \DateTime("$days days ago"))
             ->groupBy('updated_at')
             ->select(array(

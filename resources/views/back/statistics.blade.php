@@ -1,12 +1,95 @@
 @extends('back.layout')
 
 @section('main')
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+                <i class="fa fa-th"></i>
+                <h3 class="box-title">@lang('Online graph')</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body border-radius-none">
+                <div class="chart" id="online-chart" style="height: 250px;">
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+                <i class="fa fa-th"></i>
+                <h3 class="box-title">@lang('Memory graph')</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body border-radius-none">
+                <div class="chart" id="memory-chart" style="height: 250px;">
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+                <i class="fa fa-th"></i>
+                <h3 class="box-title">@lang('Tick usage graph')</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body border-radius-none">
+                <div class="chart" id="ticks-chart" style="height: 250px;">
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header ui-sortable-handle" style="cursor: move;">
+                <i class="fa fa-th"></i>
+                <h3 class="box-title">@lang('Tps graph')</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="box-body border-radius-none">
+                <div class="chart" id="tps-chart" style="height: 250px;">
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         <div class="box box-solid bg-teal-gradient">
             <div class="box-header ui-sortable-handle" style="cursor: move;">
                 <i class="fa fa-th"></i>
-                <h3 class="box-title">Sales Graph</h3>
+                <h3 class="box-title">@lang('Sales graph')</h3>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
                     </button>
@@ -28,7 +111,7 @@
 
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Latest Orders</h3>
+                <h3 class="box-title">@lang('Latest orders')</h3>
 
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -95,7 +178,7 @@
 @section('js')
     <script type="text/javascript" src="/veneto/assets/plugins/raphael/raphael-min.js"></script>
     <script type="text/javascript" src="/adminlte/plugins/morris/morris.min.js"></script>
-    <script type="text/javascript" src="/js/statistics.js?v{{ time() }}"></script>
+    <script type="text/javascript" src="/js/statistics.js"></script>
 @endsection
 
 @section('css')
