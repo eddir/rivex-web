@@ -31,7 +31,7 @@ class BugRepository
             })
             ->when ($parameters['new'], function ($query) {
                 $query->has ('important');
-            })->paginate($nbrPages);
+            })->where ('active', 1)->paginate($nbrPages);
     }
 
     /**
