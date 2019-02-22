@@ -138,9 +138,13 @@ desired effect
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
+
         <li {{ currentRouteBootstrap('admin') }}>
           <a href="{{ route('admin') }}"><i class="fa fa-fw fa-dashboard"></i> <span>@lang('Dashboard')</span></a>
         </li>
+
+        <li><a href="{{ route('admin') }}"><i class="fa fa-home"></i> <span>@lang('Dashboard')</span></a></li>
+
         @admin
 
           @include('back.partials.treeview', [

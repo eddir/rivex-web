@@ -10,6 +10,8 @@
                     <i class="fa fa-comments bg-yellow"></i>
                     @elseif ($comment->type == 1)
                     <i class="fa fa-envelope bg-blue"></i>
+                    @elseif ($comment->type == 2)
+                    <i class="fa fa-ban bg-red"></i>
                     @endif
                     <div class="timeline-item">
                         <span class="time"><i class="fa fa-clock-o"></i>{{ $comment->created_at }}</span>
@@ -18,7 +20,9 @@
                         <h3 class="timeline-header"><a href="#">{{ $comment->user->name }}</a> @lang('Left a comment')</h3>
                         @elseif ($comment->type == 1)
                         <h3 class="timeline-header"><a href="#">{{ $comment->user->name }}</a> @lang('Posted a record')</h3>
-                        @endif
+                        @elseif ($comment->type == 2)
+                        <h3 class="timeline-header"><a href="#">{{ $comment->user->name }}</a> @lang('Closed a record')</h3>
+                       @endif
 
                         <div class="timeline-body">
                             {{ str_limit($comment->body, 100) }}

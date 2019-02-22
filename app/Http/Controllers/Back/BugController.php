@@ -9,6 +9,7 @@ use App\ {
     Models\BugImportant,
     Models\BugType,
     Models\Score,
+    Models\BugComment,
     Repositories\BugRepository,
     Http\Controllers\Controller
 };
@@ -53,6 +54,15 @@ class BugController extends Controller
   {
       $bug->active = $status;
       $bug->save();
+
+      if (!$status) {
+          BugComment::create([
+              'body' => $bug->title,
+              'type' => 2,
+              'user_id' => auth()->user()->id,
+              'bug_id' => $bug->id
+          ]);
+      }
 
       return response ()->json ();
   }
