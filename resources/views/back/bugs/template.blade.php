@@ -83,7 +83,7 @@
                     ],
                     'input' => [
                         'name' => 'type',
-                        'value' => isset($bug) ? $bug->active : '',
+                        'value' => isset($bug) ? $bug->active : 1,
                         'input' => 'checkbox',
                         'title' => __('Status'),
                         'label' => __('Active'),
